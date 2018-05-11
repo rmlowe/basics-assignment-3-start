@@ -11,3 +11,20 @@
     </div>
   </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary btn-block" (click)="onButtonClick()">Display Details</button>
+      <p class="lead" *ngIf="detailsDisplayed">Secret Password = tuna</p>
+      <ol>
+        <li
+          *ngFor="let buttonClick of buttonClicks; let i = index"
+          [ngStyle]="(i >= 4) ? {backgroundColor: 'blue'} : {}"
+          [ngClass]="{'text-white': buttonClick.styled}">
+          {{ buttonClick.timestamp }} {{ buttonClick.styled }}
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
